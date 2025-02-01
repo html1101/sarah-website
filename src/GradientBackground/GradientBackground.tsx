@@ -19,8 +19,9 @@ export default function GradientBackground() {
             // We changed the window size, change!
             const b = canvasRef.current;
             if(b) {
-                b.width = window.innerWidth;
-                b.height = window.innerHeight;
+                const size = Math.min(window.innerWidth, window.innerHeight);
+                b.width = size;
+                b.height = size;
             }
         });
     }, []);
@@ -31,12 +32,12 @@ export default function GradientBackground() {
             c = b.getContext("2d");
         if(!c) return;
 
-        b.width = window.innerWidth;
-        b.height = window.innerHeight;
+        const size = Math.min(window.innerWidth, window.innerHeight);
+        b.width = size;
+        b.height = size;
         let n = 10;
 
         let animate: number | null = null;
-        const movementTowards = { x: b.width / 2, y: b.height / 2 };
 
         const curveBetweenPoints = (old_points: Position[]) => {
             const points = [...old_points];
@@ -63,7 +64,6 @@ export default function GradientBackground() {
         let relative_list = { x: b.width / 2, y: b.height / 2 };
 
         const animateCircle = (radius: number, squiggle_level: number, hsl_level: number) => {
-            const prev = new Date().getMilliseconds();
             relative_list = { x: b.width / 2, y: b.height / 2 };
             c.clearRect(0, 0, b.width, b.height);
             c.shadowColor = "rgba(0, 0, 0, 0.3)";
@@ -78,8 +78,8 @@ export default function GradientBackground() {
                 }
                 deg = Math.PI * ((i - n) / n);
                 const pos = {
-                    x: relative_list.x + Math.cos(deg)*220,
-                    y: relative_list.y + Math.sin(deg)*75-50
+                    x: relative_list.x + Math.cos(deg)*250,
+                    y: relative_list.y + Math.sin(deg)*250
                 };
                 const adjusted_dir = level + dir > squiggle_level + radius ? (Math.abs((level + dir) - (radius + squiggle_level * 2)) / (level + dir) + 0.5) : 1;
                 const new_level_amt = level + dir * adjusted_dir;
@@ -141,7 +141,7 @@ export default function GradientBackground() {
             c.clearRect(0, 0, b.width, b.height);
             c.beginPath();
             let points1 = [];
-            let extrapts: Position[][] = new Array(expand_levels).fill(0).map(e => []);
+            let extrapts: Position[][] = new Array(expand_levels).fill(0).map(_ => []);
             for (let i = 0; i < n * 2; i++) {
                 // const pos = relative_list[i];
                 const level = radius + Math.random() * squiggle_level;
@@ -214,13 +214,13 @@ export default function GradientBackground() {
     return <canvas
         ref={canvasRef}
         className={style.bg}
-        onResize={() => {
+        /*onResize={() => {
             // We changed the window size, change!
             const b = canvasRef.current;
             if(b) {
                 b.width = window.innerWidth;
                 b.height = window.innerHeight;
             }
-        }}
+        }}*/
     ></canvas>;
 }

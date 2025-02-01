@@ -1,9 +1,0 @@
-.timeList {
-    flex-grow: 1;
-}
-
-.projectList {
-    position: relative;
-    display: flex;
-    flex-direction: row;
-}

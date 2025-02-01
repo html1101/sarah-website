@@ -1,107 +1,178 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+  font-family: "Roboto Condensed", serif;
+}
+
 .topbar {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: row;
-  padding: 0.5em 0;
+  padding: 0.5em 1em;
   z-index: 2;
-  color: var(--color-1);
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
   /* font-weight: 600; */
-}
-
-.topbar > div {
-  padding: 5px 1.5em;
+  letter-spacing: 1px;
   cursor: pointer;
   transition: 0.2s;
-  border-radius: 1.5em;
+  background: radial-gradient(var(--color-4) 10%, transparent 50%);
+}
+
+.topbar:hover {
+  font-size: 30px;
+}
+
+.topbar span {
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.color {
   color: var(--color-1);
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  box-shadow: 1px 1px 0.5em rgba(0, 0, 0, 0);
 }
 
-.topbar > div:hover {
-  background: var(--color-1);
-  color: var(--color-4);
-  box-shadow: 1px 1px 0.5em rgba(0, 0, 0, 0.5);
+.body {
+  margin-top: 60px;
 }
 
-.bg {
+.intro {
   position: relative;
+  display: block;
+  height: calc(100vh - 100px);
   width: 100vw;
-  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  box-sizing: border-box;
+  padding: 0 5%;
+}
+
+.leftSide {
+  min-width: 20em;
+}
+
+.largeText {
+  font-size: 70px;
+  margin: 5px 0;
+  line-height: 1.2em;
+}
+
+.dot {
+  position: relative;
+  display: inline-block;
+  width: 0.4em;
+  height: 0.4em;
+  top: -0.1em;
+  margin: 0 0.3em;
+  border-radius: 100%;
+  background: var(--color-1);
+}
+
+.rightSide {
+  position: relative;
+  flex-grow: 1;
+  max-width: 300px;
+  padding: 20px;
+}
+
+.rightSide .faceWrap {
+  position: relative;
+}
+
+.rightSide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 100%;
+  box-shadow: 2px 2px 1em 5px rgba(0, 0, 0, 0.5);
+}
+
+.blur {
+  position: fixed;
   top: 0;
   left: 0;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.center {
-  flex-grow: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: center;
   width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(to top left, var(--color-1), var(--color-4));
+  filter: brightness(30%);
+  /* filter: blur(30px) brightness(60%); */
 }
 
-.center div {
-  color: black;
-  mix-blend-mode: color-burn;
-  z-index: 2;
-  /* filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5)); */
-}
-
-.big_txt {
-  font-size: 70px;
-}
-
-.info {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1em;
-  box-sizing: border-box;
-  text-align: center;
-  z-index: 2;
-}
-
-.info svg {
-  cursor: pointer;
-  transition: 0.4s;
-}
-
-.info svg:hover {
-  margin-top: 5px;
-  fill: var(--color-1);
-}
-
-.arrow {
-  width: 50px;
-  height: 50px;
-}
-
-.img_card {
-  height: 2em;
-  margin-top: 5px;
-  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
-}
-
-.links {
-  display: inline-flex;
-  flex-direction: row;
+.blurredBlob {
   position: relative;
+  width: 200px;
+  height: 200px;
+  background: var(--color-1);
+  filter: blur(100px) brightness(100%);
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
+  /* animation-name: movement; */
+  /* animation-iteration-count: infinite; */
+  /* animation-duration: 2s; */
+  /* animation-timing-function: ease-in-out; */
+  top: calc(50% - 4em);
+  left: calc(50% - 8em);
+  transition: 1s;
 }
 
-.links svg {
-  fill: var(--color-4);
-  color: var(--color-4);
-  height: 2em;
-  width: 2em;
+.bigElem {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.minSize {
+  min-width: 2em;
+}
+
+.workLabWrap {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 10px 50px;
+  gap: 1.5em;
+  align-items: stretch;
+  box-sizing: border-box;
+}
+
+.steps {
+  position: relative;
+  width: 2px;
+  background: var(--color-1);
+  height: auto;
+  margin-top: 15px;
+}
+
+.desc {
+  position: relative;
+  color: rgb(154, 154, 154);
+  font-size: 30px;
+}
+
+.desc .dot {
+  position: absolute;
+  /* width: 0.5em; */
+  /* height: 0.5em; */
+  margin-left: calc(-1.5rem - 0.2em - 1px);
+  top: calc(0.5em + 1.5px);
+  background: var(--color-4);
+  /* border: 3px solid var(--color-4); */
+  box-shadow: 0 0 0 1.5px var(--color-1);
+}
+
+.jobTitle {
+  color: var(--color-1);
+  font-size: 20px;
 }
