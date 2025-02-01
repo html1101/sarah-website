@@ -5,12 +5,18 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --color-1: #8FAFEF;
+  --color-2: #ECE2D0;
+  --color-3: #B8336A;
+  --color-4: #212121;
+  --color-5: #3C6E71;
+  background-color: var(--color-4);
 }
 
 a {
