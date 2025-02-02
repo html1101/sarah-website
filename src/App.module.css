@@ -12,7 +12,7 @@ body {
   display: flex;
   flex-direction: row;
   padding: 0.5em 1em;
-  z-index: 2;
+  z-index: 3;
   font-size: 25px;
   display: flex;
   align-items: center;
@@ -52,6 +52,7 @@ body {
   justify-content: space-around;
   box-sizing: border-box;
   padding: 0 5%;
+  font-size: 18px;
 }
 
 .leftSide {
@@ -59,7 +60,7 @@ body {
 }
 
 .largeText {
-  font-size: 70px;
+  font-size: 6em;
   margin: 5px 0;
   line-height: 1.2em;
 }
@@ -78,7 +79,7 @@ body {
 .rightSide {
   position: relative;
   flex-grow: 1;
-  max-width: 300px;
+  max-width: 400px;
   padding: 20px;
 }
 
@@ -153,6 +154,7 @@ body {
   background: var(--color-1);
   height: auto;
   margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .desc {
@@ -216,12 +218,19 @@ body {
   z-index: -1;
 }
 
+.project img.cover {
+  object-fit: cover;
+}
+
 .project .info {
   position: relative;
   bottom: 0;
   padding: 5px;
   z-index: 3;
   transition: 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
 
 .project .info .projName {
@@ -244,12 +253,14 @@ body {
 
 .project.reverse .info {
   text-align: right;
+  align-items: end;
 }
 
 .project.reverse .wavy {
   transform: rotateY(180deg);
-  right: 0;
+  right: -5px;
   left: auto;
+  bottom: -1px;
 }
 
 .project.above {
@@ -265,10 +276,112 @@ body {
   width: 150%;
 }
 
-.project:active .wavy {
+.hidden {
+  display: none;
+  text-align: left;
+  width: clamp(200px, 100%, 70%);
+}
+
+.project.active .wavy {
   width: 500%;
 }
 
-.project:active .info {
-  opacity: 0;
+.project.active {
+  justify-content: start;
+}
+
+.project.active .info {
+  text-align: center;
+  align-items: center;
+}
+.project.active .hidden {
+  display: block;
+}
+
+.workLab {
+  flex-grow: 1;
+}
+
+.links {
+  position: relative;
+  color: var(--color-4);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.links a {
+  width: 1.5em;
+  height: 1.5em;
+  transition: 0.2s;
+}
+
+.links a:hover {
+  filter: brightness(80%);
+}
+
+.links a svg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.researchProject {
+  border: 1.2px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  width: clamp(20em, 100%, 40em);
+  /* cursor: pointer; */
+  transition: 0.2s;
+}
+
+.researchProject:hover {
+  border: 1.2px solid rgba(255, 255, 255, 0.5);
+}
+
+.researchProject span {
+  opacity: 0.7;
+}
+
+.researchProject .projName {
+  display: inline-block;
+  font-size: 20px;
+  color: var(--color-1);
+}
+
+.code, .paper, .website {
+  position: relative;
+  background: var(--color-5);
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3px 1em;
+  margin-right: 10px;
+  border-radius: 1em;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.code:hover, .paper:hover {
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  filter: brightness(110%);
+}
+
+.paper {
+  background: var(--color-3);
+}
+
+.website {
+  background: var(--color-2);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.lists {
+  position: relative;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+
 }
