@@ -1,7 +1,13 @@
 // import { useState } from 'react'
 import { useEffect, useReducer, useRef, useState } from "react";
 import style from "./App.module.css"
-import face from "./assets/person.avif";
+import face from "./assets/me.jpeg";
+// Screenshots:
+import cmpShot from "./assets/CMP-Screenshot.webp";
+import laserTrack from "./assets/laser-track.gif";
+import tallyLights from "./assets/TallyLights.jpg";
+import camPhoto from "./assets/camPhoto.webp";
+import Wavy from "./assets/Wavy";
 
 const sleep = (time: number) => {
   return new Promise((res) => {
@@ -32,7 +38,7 @@ function App() {
       setText("SARAL");
       await sleep(100);
       setText("SARAH");
-      await sleep(2000);
+      await sleep(1000);
       running.current = false;
 
       await sleep(10000);
@@ -101,9 +107,45 @@ function App() {
             <div className={style.jobTitle}>PTZOptics</div>
             Software Engineer Intern: 2021 - Present
             <div className={style.things}>
-              <div className={style.project}>
-                <object type="image/svg+xml" data="./Gooey.svg"></object>
+            <div className={style.project}>
+                <Wavy className={style.wavy} />
+                <div className={style.info}>
+                  <div className={style.projName}>PTZOptics Horizon</div>
+                  <br />
+                  Coming soon!
+                </div>
+                <img src={camPhoto} />
               </div>
+              <div className={`${style.project} ${style.reverse}`}>
+                <Wavy className={style.wavy} />
+                <div className={style.info}>
+                  <div className={style.projName}>CMP</div>
+                  <br />
+                  Management platform for P/T/Z cameras
+                </div>
+                <img src={cmpShot} />
+              </div>
+              <div className={`${style.project} ${style.reverse}`}>
+                <Wavy className={style.wavy} />
+                <div className={style.info}>
+                  <div className={style.projName}>Laser Tracking</div>
+                  <br />
+                  High-performance ML model to track lasers.
+                </div>
+                <img src={laserTrack}/>
+              </div>
+              <div className={`${style.project} ${style.above}`}>
+                <Wavy className={style.wavy} />
+                <div className={style.info}>
+                  <div className={style.projName}>TallyLights</div>
+                  <br />
+                  A software on-air indicator system for
+                  <br />
+                  multi-camera video productions.
+                </div>
+                <img src={tallyLights}/>
+              </div>
+              
             </div>
 
             <div className={style.desc}>

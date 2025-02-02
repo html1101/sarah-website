@@ -176,3 +176,99 @@ body {
   color: var(--color-1);
   font-size: 20px;
 }
+
+.things {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  gap: 10px;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.project {
+  width: clamp(300px, 90%, 500px);
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 5px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 5px;
+  margin-top: 5px;
+  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.project img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--color-4);
+  z-index: -1;
+}
+
+.project .info {
+  position: relative;
+  bottom: 0;
+  padding: 5px;
+  z-index: 3;
+  transition: 0.2s;
+}
+
+.project .info .projName {
+  font-size: 20px;
+  display: inline-block;
+  border-bottom: 1.2px solid var(--color-1);
+}
+
+.project .wavy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: transparent;
+  z-index: 2;
+  width: 140%;
+  color: var(--color-1);
+  filter: brightness(50%);
+  transition: 0.2s;
+}
+
+.project.reverse .info {
+  text-align: right;
+}
+
+.project.reverse .wavy {
+  transform: rotateY(180deg);
+  right: 0;
+  left: auto;
+}
+
+.project.above {
+  justify-content: start;
+}
+
+.project.above .wavy {
+  top: 0;
+  transform: rotateX(180deg);
+}
+
+.project:hover .wavy {
+  width: 150%;
+}
+
+.project:active .wavy {
+  width: 500%;
+}
+
+.project:active .info {
+  opacity: 0;
+}
