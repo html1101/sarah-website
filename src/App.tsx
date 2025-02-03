@@ -20,6 +20,7 @@ import ise from "./assets/ise.webp";
 import tartanHacks from "./assets/tartanhacks.jpg";
 import hate from "./assets/hate.jpg";
 import dna from "./assets/dna.png";
+import { Analytics } from "@vercel/analytics/react"
 
 const sleep = (time: number) => {
   return new Promise((res) => {
@@ -491,6 +492,7 @@ function App() {
             */}
         </div>
       </div>
+      <Analytics />
     </div>
   )
 }
