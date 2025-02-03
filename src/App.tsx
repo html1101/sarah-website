@@ -212,7 +212,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>PTZOptics Horizon</div>
-                    <br />
                     Coming soon!
                     <br />
                     <div className={style.hidden}>
@@ -234,7 +233,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <a className={style.projName} href="https://ptzoptics.com/cmp" target="_blank">CMP</a>
-                    <br />
                     Management platform for P/T/Z cameras
                     <div className={style.hidden}>
                       {backBtn}
@@ -263,7 +261,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <a className={style.projName} href="https://tallylights.com" target="_blank">TallyLights</a>
-                    <br />
                     A software on-air indicator system for
                     <br />
                     multi-camera video productions.
@@ -291,7 +288,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>Laser Tracking</div>
-                    <br />
                     Accurate ML model to track lasers.
                     <div className={style.hidden}>
                       {backBtn}
@@ -315,7 +311,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <a className={style.projName} href='https://github.com/html1101/OptoPulse-AI' target="_blank">OptoPulse</a>
-                    <br />
                     Evaluates optometric info such as
                     <br />
                     dry eye risk and vision testing.
@@ -339,7 +334,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>Running Widgets</div>
-                    <br />
                     Converts GPX routes into exportable
                     <br />
                     treadmill workouts.
@@ -361,7 +355,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>Block Anything</div>
-                    <br />
                     Chrome extension to block triggering <br />
                     content online.
                     <div className={style.hidden}>
@@ -381,7 +374,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>Bias Insight</div>
-                    <br />
                     Chrome extension to track bias <br />
                     in content consumed online.
                     <div className={style.hidden}>
@@ -402,7 +394,6 @@ function App() {
                   <Wavy className={style.wavy} />
                   <div className={style.info}>
                     <div className={style.projName}>3D DNA Model</div>
-                    <br />
                     3D DNA model created from scratch.
                     <div className={style.hidden}>
                       {backBtn}
@@ -426,7 +417,7 @@ function App() {
                 <div className={style.projName}>MAS Mechanism Analysis</div>
                 <br />
                 <span>Identified and analyzed transcription factors binding locations associated with type II and III multiple autoimmune syndrome diseases.</span>
-                
+
                 <div className={style.lists}>
                   <a className={style.code} href="https://github.com/html1101/RELI-Analysis" target="_blank">Code</a>
                   <a className={style.paper} href="./mechanisms.pdf" target="_blank">Paper</a>
