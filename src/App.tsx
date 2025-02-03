@@ -183,7 +183,9 @@ function App() {
                 SARAH CROSS
               </div>
               <span>
-                Full-Stack Dev {dot} Student {dot} Researcher
+                <span className={style.fullStack}>Full-Stack Dev</span> {dot}
+                <span className={style.student}>Student</span> {dot}
+                <span className={style.researcher}>Researcher</span>
               </span>
 
               {links}

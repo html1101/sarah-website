@@ -503,11 +503,11 @@ body {
 
 @media only screen and (max-width: 500px) {
   .wavy {
-    width: 228% !important;
+    width: 240% !important;
   }
 
   .project:hover .wavy {
-    width: 250% !important;
+    width: 260% !important;
   }
 
   .project.active .wavy {
@@ -516,5 +516,44 @@ body {
 
   .workLabWrap {
     padding: 10px 10px;
+  }
+}
+
+.fullStack {
+  animation: fade-1 2.3s ease-in;
+}
+
+@keyframes fade-1 {
+  0% {
+    opacity: 0;
+  }
+  65.2% {
+    opacity: 0;
+  }
+}
+
+.student {
+  animation: fade-2 3s ease-in;
+}
+
+@keyframes fade-2 {
+  0% {
+    opacity: 0;
+  }
+  76.7% {
+    opacity: 0;
+  }
+}
+
+.researcher {
+  animation: fade-3 3.7s ease-in;
+}
+
+@keyframes fade-3 {
+  0% {
+    opacity: 0;
+  }
+  81.1% {
+    opacity: 0;
   }
 }
