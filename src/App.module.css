@@ -503,11 +503,11 @@ body {
 
 @media only screen and (max-width: 500px) {
   .wavy {
-    width: 300% !important;
+    width: 228% !important;
   }
 
   .project:hover .wavy {
-    width: 340% !important;
+    width: 250% !important;
   }
 
   .project.active .wavy {
