@@ -54,7 +54,6 @@ function App() {
     // Start with setting to nothing then type out sarah
     (async function show() {
       if (running.current) return;
-      console.log("Starting show");
       running.current = true;
       setText("LCCDO");
       await sleep(150);
@@ -249,10 +248,9 @@ function App() {
                         <b>Tools Used: </b>
                         NodeJS{dot}HTML/CSS/JS{dot}Express{dot}Electron{dot}Electron
                       </div>
-                      <br />
-                      <a className={style.link} href="https://ptzoptics.com/cmp" target="_blank">More Info</a>
                     </div>
                   </div>
+                  <a className={style.link} href="https://ptzoptics.com/cmp" target="_blank">More Info</a>
                   <img src={cmpShot} />
                   <div className={style.awardLocation}>
                     <a href="https://www.nabshow.com/" target="_blank"><img src={nabShow} /></a>
@@ -279,9 +277,9 @@ function App() {
                         <b>Tools Used: </b>
                         HTML/CSS/JS{dot}Tauri{dot}C++{dot}Rust{dot}NDI SDK
                       </div>
-                      <a className={style.link} href="https://tallylights.com" target="_blank">More Info</a>
                     </div>
                   </div>
+                  <a className={style.link} href="https://tallylights.com" target="_blank">More Info</a>
                   <img src={tallyLights} />
                 </div>
 
@@ -311,6 +309,30 @@ function App() {
               <div className={style.jobTitle}>Miscellaneous</div>
 
               <div className={style.things}>
+              <div
+                  className={`${style.project} ${selectedProject === Projects.OptoPulse ? style.active : ""}`}
+                  onClick={() => setSelectedProject(Projects.OptoPulse)}>
+                  <Wavy className={style.wavy} />
+                  <div className={style.info}>
+                    <a className={style.projName} href='https://github.com/html1101/OptoPulse-AI' target="_blank">OptoPulse</a>
+                    <br />
+                    Evaluates optometric info such as
+                    <br />
+                    dry eye risk and vision testing.
+                    <div className={style.hidden}>
+                      {backBtn}
+                      <br />
+                      Top 15 at TartanHacks, the largest hackathon in Pittsburgh.
+                      <div>
+                        <b>Tools Used: </b>
+                        OpenAI API{dot}NodeJS{dot}Express{dot}Tensorflow (TFJS){dot}HTML/CSS/JS
+                      </div>
+                    </div>
+                  </div>
+                  <a className={style.link} href="https://github.com/html1101/OptoPulse-AI" target="_blank">View Code</a>
+                  <img className={`${style.awardLocation} ${style.darkAward}`} src={tartanHacks} />
+                  <img src={dryEyes} />
+                </div>
                 <div
                   className={`${style.project} ${style.above} ${selectedProject === Projects.RunningWidgets ? style.active : ""}`}
                   onClick={() => setSelectedProject(Projects.RunningWidgets)}>
@@ -328,9 +350,9 @@ function App() {
                         Python{dot}Linear Regression
                       </div>
                       <br />
-                      <a className={style.link} href="https://github.com/html1101/Useful-Running-Widgets" target="_blank">View Project</a>
                     </div>
                   </div>
+                  <a className={style.link} href="https://github.com/html1101/Useful-Running-Widgets" target="_blank">View Code</a>
                   <img src={runningShot} className={style.cover} />
                 </div>
                 <div
@@ -352,34 +374,7 @@ function App() {
                   </div>
                   <img src={cnnShot} className={style.cover} />
                 </div>
-              </div>
 
-              <div className={style.things}>
-                <div
-                  className={`${style.project} ${selectedProject === Projects.OptoPulse ? style.active : ""}`}
-                  onClick={() => setSelectedProject(Projects.OptoPulse)}>
-                  <Wavy className={style.wavy} />
-                  <div className={style.info}>
-                    <a className={style.projName} href='https://github.com/html1101/OptoPulse-AI' target="_blank">OptoPulse</a>
-                    <br />
-                    Evaluates optometric info such as
-                    <br />
-                    dry eye risk and vision testing.
-                    <div className={style.hidden}>
-                      {backBtn}
-                      <br />
-                      Top 15 at TartanHacks, the largest hackathon in Pittsburgh.
-                      <div>
-                        <b>Tools Used: </b>
-                        OpenAI API{dot}NodeJS{dot}Express{dot}Tensorflow (TFJS){dot}HTML/CSS/JS
-                      </div>
-
-                      <a className={style.link} href="https://github.com/html1101/Useful-Running-Widgets" target="_blank">View Project</a>
-                    </div>
-                  </div>
-                  <img className={`${style.awardLocation} ${style.darkAward}`} src={tartanHacks} />
-                  <img src={dryEyes} />
-                </div>
                 <div
                   className={`${style.project} ${style.reverse} ${selectedProject === Projects.BiasInsight ? style.active : ""}`}
                   onClick={() => setSelectedProject(Projects.BiasInsight)}>
@@ -391,9 +386,9 @@ function App() {
                     in content consumed online.
                     <div className={style.hidden}>
                       {backBtn}
-                      <a className={style.link} href="https://github.com/html1101/Bias-Insight" target="_blank">View Project</a>
                     </div>
                   </div>
+                  <a className={style.link} href="https://github.com/html1101/Bias-Insight" target="_blank">View Code</a>
                   <div className={style.awardLocation}>
                     <a href="https://www.duq.edu/research/centers-and-institutes/grefenstette-center/hacking4humanity.php" target="_blank">
                       <img src={hate} />
@@ -415,9 +410,9 @@ function App() {
                         <b>Tools Used: </b>
                         ThreeJS{dot}HTML/CSS/JS
                       </div>
-                      <a className={style.link} href="https://github.com/html1101/Bias-Insight" target="_blank">View Project</a>
                     </div>
                   </div>
+                  <a className={style.link} href="https://codepen.io/Rainy123/pen/qBBLGKO" target="_blank">View Code</a>
                   <img src={dna} className={style.cover} />
                 </div>
               </div>
@@ -431,6 +426,7 @@ function App() {
                 <div className={style.projName}>MAS Mechanism Analysis</div>
                 <br />
                 <span>Identified and analyzed transcription factors binding locations associated with type II and III multiple autoimmune syndrome diseases.</span>
+                
                 <div className={style.lists}>
                   <a className={style.code} href="https://github.com/html1101/RELI-Analysis" target="_blank">Code</a>
                   <a className={style.paper} href="./mechanisms.pdf" target="_blank">Paper</a>

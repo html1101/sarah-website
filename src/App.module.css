@@ -88,6 +88,7 @@ body {
   position: relative;
   flex-grow: 1;
   max-width: 400px;
+  aspect-ratio: 1;
   padding: 20px;
 }
 
@@ -159,6 +160,7 @@ body {
 .steps {
   position: relative;
   width: 2px;
+  min-width: 2px;
   background: var(--color-1);
   height: auto;
   margin-top: 15px;
@@ -313,7 +315,8 @@ body {
 .project.active .info {
   text-align: center;
   align-items: center;
-  height: 100%;
+  height: calc(100% - 3em);
+  overflow-y: auto;
 }
 
 .project.active .hidden {
@@ -428,7 +431,7 @@ body {
 }
 
 .link {
-  padding: 5px 2em;
+  padding: 5px 1.7em;
   background: transparent;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 1.5em;
@@ -438,6 +441,13 @@ body {
   transform: translateX(-50%);
   border: 2px solid rgba(255, 255, 255, 0.7);
   transition: 0.2s;
+  display: none;
+  text-align: center;
+  z-index: 3;
+}
+
+.project.active .link {
+  display: block;
 }
 
 .link:hover {
@@ -473,4 +483,38 @@ body {
   background: #1a1819;
   object-fit: cover;
   height: 70px;
+}
+
+@media only screen and (max-width: 700px) {
+  .intro {
+    flex-direction: column-reverse;
+    font-size: 15px;
+    text-align: center;
+  }
+  .rightSide {
+    aspect-ratio: 1;
+    max-height: 300px;
+    max-width: 300px;
+  }
+  .links {
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .wavy {
+    width: 300% !important;
+  }
+
+  .project:hover .wavy {
+    width: 340% !important;
+  }
+
+  .project.active .wavy {
+    width: 900% !important;
+  }
+
+  .workLabWrap {
+    padding: 10px 10px;
+  }
 }
