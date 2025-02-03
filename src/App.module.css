@@ -8,10 +8,10 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  width: auto;
+  width: 7em;
   display: flex;
   flex-direction: row;
-  padding: 0.5em 1em;
+  padding: 0.5em 0.1em 0.2em 0.5em;
   z-index: 3;
   font-size: 25px;
   display: flex;
@@ -516,6 +516,10 @@ body {
 
   .workLabWrap {
     padding: 10px 10px;
+  }
+
+  .topbar {
+    position: absolute;
   }
 }
 
