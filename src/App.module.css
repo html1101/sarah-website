@@ -326,7 +326,7 @@ body {
 
 .links {
   position: relative;
-  color: var(--color-4);
+  color: var(--color-1);
   display: flex;
   align-items: center;
   gap: 10px;
@@ -337,6 +337,7 @@ body {
 .links a {
   width: 1.5em;
   height: 1.5em;
+  color: var(--color-1);
   transition: 0.2s;
 }
 
