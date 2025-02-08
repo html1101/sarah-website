@@ -306,6 +306,34 @@ function App() {
 
               <div className={style.things}>
               <div
+                  className={`${style.project} ${style.reverse} ${selectedProject === Projects.BiasInsight ? style.active : ""}`}
+                  onClick={() => setSelectedProject(Projects.BiasInsight)}>
+                  <Wavy className={style.wavy} />
+                  <div className={style.info}>
+                    <div className={style.projName}>Bias Insight</div>
+                    Chrome extension to track bias <br />
+                    in content consumed online.
+                    <div className={style.hidden}>
+                      {backBtn}
+                      <br />
+                      Winner of the Hacking4Humanity Hackathon (Tech <br /> Track); will
+                      present work in front of leaders of PA's statewide equity initiatives in March. <br />
+                      <br />
+                      <div>
+                        <b>Tools Used: </b>
+                        Python{dot}Tensorflow{dot}HTML/CSS/JS
+                      </div>
+                    </div>
+                  </div>
+                  <a className={style.link} href="https://github.com/html1101/Bias-Insight" target="_blank">View Code</a>
+                  <div className={style.awardLocation}>
+                    <a href="https://www.duq.edu/research/centers-and-institutes/grefenstette-center/hacking4humanity.php" target="_blank">
+                      <img src={hate} />
+                    </a>
+                  </div>
+                  <img src={biasInsight} />
+                </div>
+              <div
                   className={`${style.project} ${selectedProject === Projects.OptoPulse ? style.active : ""}`}
                   onClick={() => setSelectedProject(Projects.OptoPulse)}>
                   <Wavy className={style.wavy} />
@@ -368,26 +396,6 @@ function App() {
                   <img src={cnnShot} className={style.cover} />
                 </div>
 
-                <div
-                  className={`${style.project} ${style.reverse} ${selectedProject === Projects.BiasInsight ? style.active : ""}`}
-                  onClick={() => setSelectedProject(Projects.BiasInsight)}>
-                  <Wavy className={style.wavy} />
-                  <div className={style.info}>
-                    <div className={style.projName}>Bias Insight</div>
-                    Chrome extension to track bias <br />
-                    in content consumed online.
-                    <div className={style.hidden}>
-                      {backBtn}
-                    </div>
-                  </div>
-                  <a className={style.link} href="https://github.com/html1101/Bias-Insight" target="_blank">View Code</a>
-                  <div className={style.awardLocation}>
-                    <a href="https://www.duq.edu/research/centers-and-institutes/grefenstette-center/hacking4humanity.php" target="_blank">
-                      <img src={hate} />
-                    </a>
-                  </div>
-                  <img src={biasInsight} />
-                </div>
                 <div
                   className={`${style.project} ${style.reverse} ${selectedProject === Projects.Dna3D ? style.active : ""}`}
                   onClick={() => setSelectedProject(Projects.Dna3D)}>
